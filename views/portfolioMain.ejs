@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Canvas</title>
+
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/portfolioMain.css">
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="nav-section">
+                <a href="/"><img src="/images/codecanvas_pink.png" alt="CodeCanvas logo"></a>
+                <a href="#" class="nav-link">marketplace</a>
+                <a href="/portfolio" class="nav-link">portfolio</a>
+            </div>
+    
+            <div class="auth-section">
+                <div>
+                    <a href="/logout" class="auth-link">Log out</a>
+                    <a href="/profile" class="sign-up-btn">
+                        Profile
+                    </a>
+                </div>
+                <img src="/images/icons/search.png" alt="Search icon" class="search-icon" width="40" height="40">
+            </div>
+        </div>
+        <div class="contents">
+            <ul class="portfolios">
+                <% portList.forEach(function (portfolio){ %>
+                    <li>
+                        <a href="/portfolio/article?id=<%= portfolio._id %>" target="_blank">
+                            <div class="card">
+                                <h2><%= portfolio.title %></h2>
+                                <p>
+                                    <% portfolio.tags.forEach(function (tag) { %>
+                                    <span>
+                                        <%= tag %>
+                                    </span>
+                                    <% }); %>
+                                </p>
+                                <p><%= portfolio.createdAt.toLocaleDateString() %></p>
+                            </div>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

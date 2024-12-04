@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto-Regular", sans-serif;
+    background-color: #f9f9f9; /* 배경 색상 추가 */
+}
+
+/* 공통 레이어 배경 */
+.layer_bg {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999; /* 모달 창보다 뒤에 위치 */
+    display: none;
+}
+
+/* 게시판 작성 섹션 스타일 */
+.board_write {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 16px;
+    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+    max-width: 1920px; /* 콘텐츠의 최대 너비 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 옵션과 버튼 영역 사이 간격 추가 */
+}
+
+/* task_area 오른쪽 끝 정렬 스타일 */
+.task_area {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    gap: 10px;
+}
+
+.btn_task_wrap {
+    display: flex;
+    flex-direction: row; /* 가로로 배열 */
+    gap: 10px;
+}
+
+.btn_enter {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F25C78;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn_enter:hover {
+    background-color: #CA3651;
+}
+
+/* 옵션 섹션 스타일 */
+.task_option {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; /* 가로로 배열 */
+    gap: 20px;
+}
+
+.task_option li {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.board_txt {
+    width: 120px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.wrap_sbj {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.sbj {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.cnt_txt {
+    margin-left: 10px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.wrap_temandok {
+    display: flex;
+}
+
+.wrap_temandok .task_area {
+    margin-left: auto;
+}
+
+/* 가져오기, 템플릿 버튼 스타일 */
+.btn-import,
+.btn-open-modal,
+.btn-open-modal-tem {
+    padding: 10px 20px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-import:hover,
+.btn-open-modal:hover,
+.btn-open-modal-tem:hover {
+    background-color: #f0f0f0;
+    border-color: #b0b0b0;
+}
+
+/* 메인 에디터 영역 스타일 */
+.main-editor {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* 카테고리 모달 스타일 */
+.category-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    display: none;
+}
+
+.category-modal h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.cont-category-select {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.option-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.option-box ul li {
+    padding: 10px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.option-box ul li span {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.line {
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+.depth input[type="radio"] {
+    accent-color: #F25C78;
+}
+
+.depth input[type="radio"] + label {
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-top: 5px;
+}
+
+.depth input[type="radio"]:checked + label {
+    color: #F25C78;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn_ok {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #F25C78;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn_ok:hover {
+    background-color: #CA3651;
+}
+
+/* 템플릿 모달 스타일 */
+.template-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    display: none;
+}
+
+.template-modal h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.cont-template-select {
+    max-height: 600px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.horizontal-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.depth {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.depth-tem {
+    display: flex;
+    flex-direction: column; /* 수직으로 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+    gap: 10px;
+}
+
+.depth-tem img {
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+/* 선택된 항목 스타일 */
+.depth input[type="radio"] + label {
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.depth input[type="radio"]:checked + label {
+    color: #F25C78;
+    font-weight: bold;
+}
+
+/* 기본 버튼 스타일 */
+.btn_ok {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: white;
+    cursor: not-allowed;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn_ok.active {
+    background-color: #F25C78;
+    cursor: pointer;
+}
+
+.btn_ok:hover {
+    background-color: #CA3651;
+}

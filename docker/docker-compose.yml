@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    node:
+        image: node:latest
+        ports:
+            - "3003:3000"
+            - "8003:8080"
+        container_name: node
+        network_mode: "host"
+        tty: true
+    mongo:
+        image: mongo:8.0.1
+        container_name: mongo

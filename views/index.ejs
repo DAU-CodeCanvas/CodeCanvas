@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Code Canvas</title>
+        
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/index.css">
+        <script src="/js/index.js"></script>
+    </head>
+    <body>
+        <!-- Top Menu bar -->
+        <div class="wrapper">
+            <div class="header">
+                <div class="nav-section">
+                    <a href="/"><img src="/images/codecanvas_pink.png" alt="CodeCanvas logo"></a>
+                    <a href="#" class="nav-link">marketplace</a>
+                    <a href="/portfolio" class="nav-link">portfolio</a>
+                </div>
+        
+                <div class="auth-section">
+                    <div>
+                        <a href="/logout" class="auth-link">Log out</a>
+                        <a href="/profile" class="sign-up-btn">
+                            Profile
+                        </a>
+                    </div>
+                    <img src="/images/icons/search.png" alt="Search icon" class="search-icon" width="40" height="40">
+                </div>
+            </div>
+            
+            <div class="contents">
+
+                <!-- 이미지 슬라이드쇼 -->
+                <div class="slideshow-container">
+                    <div class="slide fade">
+                        <img src="/images/poster/ppl_sample1.jpg" alt="광고배너">
+                    </div>
+                    <div class="slide fade">
+                        <img src="/images/poster/ppl_sample2.jpg" alt="광고배너">
+                    </div>
+                    <div class="slide fade">
+                        <img src="/images/poster/ppl_sample3.jpg" alt="광고배너">
+                    </div>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                
+                <!-- Subscribed Portfolio Section -->
+                <div class="subprotfolio-section">
+                    <div class="subprotfolio-title">Subscribed Portfolio</div>
+                    <div class="subprotfolio-subtitle">내가 구독한 개발자의 포트폴리오를 만나보세요</div>
+                    <div class="subprotfolio-slider">
+                        <!-- Project Card -->
+                        <div class="project-card">
+                            <div class="subtitle">
+                                <div class="date">2024.11.1 (개인프로젝트)</div>
+                                <div class="tags">
+                                    <div class="tag">#백엔드</div>
+                                    <div class="tag">#프론트엔드</div>
+                                </div>
+                            </div>
+                            <div class="title">타임박스 플래너</div>
+                            <div class="description">
+                                타임박스 플래너를 앱으로 활용하기 위한 PWA 기반의 웹사이트
+                                <ul>
+                                    <li>한 지인의 요청으로 시중의 앱들보다 최소한의 기능만으로 간결하게 개발</li>
+                                    <li>한 지인의 요청으로 시중의 앱들보다 최소한의 기능만으로 간결하게 개발</li>
+                                    <li>한 지인의 요청으로 시중의 앱들보다 최소한의 기능만으로 간결하게 개발</li>
+                                </ul>
+                            </div>
+                            <a href="https://timeboxplanner.co.kr" class="link">https://timeboxplanner.co.kr</a>
+                            <div class="technologies">Next.js, Zustand, Sass, Supabase, Vercel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subscribed Profile Section -->
+                <div class="profile-section">
+                    <div class="rofile-title">Subscirbed Developer</div>
+                    <div class="profile-subtitle">내가 구독한 개발자의 프로필을 만나보세요</div>
+                    <!-- Profile Card -->
+                    <div class="profile-card">
+                        <img src="/images/icons/profile.png" alt="프로필사진">
+                        <div class="username">@boynextdoor</div>
+                        <div class="social-icons">
+                            <a href="#"><img src="/images/icons/GitHub.png" alt="GitHub">boynextdoor</a>
+                            <a href="mailto:example@gmail.com"><img src="/images/icons/Email.png" alt="Email">example@gmail.com</a>
+                        </div>
+                        <div class="tags">
+                            <span class="tag" style="background: #f5f5dc;">#백엔드개발자</span>
+                            <span class="skilltag" style="background: #66a182; color: #ffffff;">#MySQL</span>
+                            <span class="skilltag" style="background: #66a182; color: #ffffff;">#SpringBoot</span>
+                        </div>
+                        <div class="likes">
+                            <img src="/images/icons/heart.png" alt="Like">
+                            <span>72578</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommend Section -->
+                <div class="recommend-section">
+                    <div class="recommend-title">Recommand Developer</div>
+                    <div class="recommend-subtitle">CodeCanvas에서 추천하는 개발자예요</div>
+                    <div class="developer-slider">
+                        <!-- Developer Card -->
+                        <div class="developer-card">
+                            <div class="profile">
+                                <img src="/images/icons/profile.png" alt="프로필사진">
+                            </div>
+                            <div class="name">Sam</div>
+                            <div class="follower">follower: 780</div>
+                            <div class="view">view: 3186</div>
+                            <div class="contact">contact: sample@mail.com</div>
+                            <div class="projects">
+                                <div class="project">
+                                    <div class="project-name">projectname</div>
+                                    <div class="project-tags">
+                                        <span class="tag">#프론트엔드</span>
+                                        <span class="tag">#UX/UI</span>
+                                    </div>
+                                </div>
+                                <div class="project">
+                                    <div class="project-name">projectname</div>
+                                    <div class="project-tags">
+                                        <span class="tag">#프론트엔드</span>
+                                        <span class="tag">#UX/UI</span>
+                                    </div>
+                                </div>
+                                <div class="project">
+                                    <div class="project-name">projectname</div>
+                                    <div class="project-tags">
+                                        <span class="tag">#프론트엔드</span>
+                                        <span class="tag">#UX/UI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
